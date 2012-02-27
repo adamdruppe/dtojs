@@ -1,0 +1,34 @@
+First, copy in the backend folder from the dmd.zip you
+get from Digital Mars.
+
+(You need it to compile, but I don't have a license to
+distribute it myself.)
+
+
+Then, run make to build the hacked dmd.
+
+
+
+When its done, change into the "test" directory and
+start to play. The makefile there shows how to build
+some javascript.
+
+../dmd -md yourfile.d
+
+and optionally you can use my library in there from
+test/browser and test/std.
+
+test/browser is the kind of core runtime to this,
+in addition to object.d.
+
+object.d - the stuff D expects and the basic JS language
+constructs
+
+browser/*.d - bindings to objects and functions the browser provides
+such as the DOM.
+
+Most global functions in the browser are found in browser/window.d.
+
+
+std/*.d - just super minimal wrappers to browser functions laid out
+more like Phobos.
